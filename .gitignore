@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings/*
+bin/*
+build-path.properties
+classes/*
+css3-selector-plugin-*.jar

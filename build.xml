@@ -1,0 +1,30 @@
+<project name="css3-selector-plugin" default="build" basedir=".">
+
+	<description>CSS3 Selector Plugin for Web-Harvest</description>
+
+	<property file="build-path.properties" />
+	<property name="classes.dir" value="${basedir}/classes" />
+
+	<property name="version" value="1.0" />
+
+	<path id="compile.classpath">
+		<fileset dir="${webharvest.home}/lib" />
+		<fileset file="${webharvest.home}/webharvest_2.jar" />
+		<fileset file="${css-selectors.home}/target/css-selectors-1.0.1-SNAPSHOT.jar" />
+	</path>
+
+	<target name="clean" description="Remove generated folders">
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="build" depends="clean">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="src" destdir="${classes.dir}">
+			<classpath refid="compile.classpath" />
+		</javac>
+		<jar jarfile="${ant.project.name}-${version}.jar">
+			<fileset dir="${classes.dir}" />
+		</jar>
+	</target>
+
+</project>
