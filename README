@@ -1,0 +1,24 @@
+CSS3 Selector Plugin for Web-Harvest.
+
+This is a simple Web-Harvest (http://web-harvest.sourceforge.net) plugin 
+that wraps Christer Sandberg's css-selectors (http://github.com/chrsan/css-selectors).
+
+Here is a example:
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<var-def name="css">
+		<css3 selector="a.l">
+			<html-to-xml>
+				<http url="http://www.google.com/search?q=css" />
+			</html-to-xml>
+		</css3>
+	</var-def>
+</config>
+
+This will extract all the 'a' tags that have the class 'l' and 
+store them in the variable 'css'.
+
+A useful tool to know the exact CSS selector to use to obtain an element
+is the SelectorGadget (http://www.selectorgadget.com/).
+ 
+Pascal Dimassimo
